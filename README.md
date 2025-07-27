@@ -7,13 +7,15 @@
 
 ## Reverse Proxy Config
 For xampp:
-xampp\apache\conf\httpd.conf   activate these two lines
+xampp\apache\conf\httpd.conf   
+activate these two lines
 ```
 LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_http_module modules/mod_proxy_http.so
 ```
 
-xampp/apache/conf/extra/httpd-vhosts.conf   add
+xampp/apache/conf/extra/httpd-vhosts.conf   
+add
 ```
 <VirtualHost *:80>
     ServerName localhost
