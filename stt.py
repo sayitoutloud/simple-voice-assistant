@@ -1,5 +1,6 @@
 import speech_recognition as sr
 from lm_studio import LMStudioClient
+from tts import SprachAusgabe
 
 # Speech To Text
 class STT:
@@ -7,8 +8,9 @@ class STT:
         self.recognizer = sr.Recognizer()
         self.sprache = sprache
         self.assistent = LMStudioClient()
+        self.tts = SprachAusgabe("de")
 
-    def starten(self):
+    def start(self):
         with sr.Microphone() as quelle:
             print("??? Sprachueberwachung gestartet. Sprich jederzeit...")
             self.recognizer.adjust_for_ambient_noise(quelle)
@@ -25,6 +27,7 @@ class STT:
 
                     # ?? An LM Studio schicken
                     antwort = self.assistent.frage(text)
+                    self.tts.sprechen(antwort)
                     print("?? Antwort von LM Studio:", antwort)
                     print("-" * 50)
 
