@@ -1,5 +1,5 @@
-from test import SprachErkenner
+from stt import STT
 
 if __name__ == "__main__":
-    erkenner = SprachErkenner()
-    erkenner.starten()
+    speech_to_text = STT()
+    speech_to_text.start()
