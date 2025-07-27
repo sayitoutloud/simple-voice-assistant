@@ -8,11 +8,14 @@
 ## Reverse Proxy Config
 For xampp:
 xampp\apache\conf\httpd.conf   activate these two lines
-`LoadModule proxy_module modules/mod_proxy.so
-LoadModule proxy_http_module modules/mod_proxy_http.so`
+`
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_http_module modules/mod_proxy_http.so
+`
 
 xampp/apache/conf/extra/httpd-vhosts.conf   add
-`<VirtualHost *:80>
+```
+<VirtualHost *:80>
     ServerName localhost
     DocumentRoot "C:/xampp/htdocs"
 
@@ -25,5 +28,6 @@ xampp/apache/conf/extra/httpd-vhosts.conf   add
 
     ProxyPass /lmstudio-api/ http://localhost:1234/
     ProxyPassReverse /lmstudio-api/ http://localhost:1234/
-</VirtualHost>`
+</VirtualHost>
+```
 
