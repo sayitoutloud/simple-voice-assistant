@@ -33,3 +33,26 @@ add
 </VirtualHost>
 ```
 
+## Request Script (Python)
+```
+import requests
+
+url = "http://10.0.0.45/lmstudio-api/v1/chat/completions"
+
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer lm-studio"
+}
+
+data = {
+    "model": "llama3:8b",
+    "messages": [{"role": "user", "content": "Hallo!"}],
+    "temperature": 0.7
+}
+
+response = requests.post(url, headers=headers, json=data)
+
+print(response.status_code)
+print(response.json())
+
+```
