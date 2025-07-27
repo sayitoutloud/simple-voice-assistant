@@ -56,3 +56,34 @@ print(response.status_code)
 print(response.json())
 
 ```
+
+## Voice recognation & change it to text
+```
+pip install SpeechRecognition
+pip install PyAudio
+```
+
+Script
+```
+import speech_recognition as sr
+
+# Erkenner erstellen
+recognizer = sr.Recognizer()
+
+# Mikrofon verwenden
+with sr.Microphone() as quelle:
+    print("??? Bitte sprich jetzt...")
+    recognizer.adjust_for_ambient_noise(quelle)  
+    audio = recognizer.listen(quelle)           
+
+    print("?? Verarbeite Sprache...")
+
+    try:
+        
+        text = recognizer.recognize_google(audio, language="de-DE")
+        print("?? Erkannt: " + text)
+    except sr.UnknownValueError:
+        print("?? Sprache konnte nicht erkannt werden.")
+    except sr.RequestError as e:
+        print(f"? Fehler bei der Verbindung zu Google: {e}")
+```
