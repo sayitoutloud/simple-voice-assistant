@@ -33,6 +33,16 @@ add
 </VirtualHost>
 ```
 
+## Make python environment
+```
+sudo apt update
+sudo apt install python3-venv
+mkdir ~/meine_app
+cd ~/meine_app
+python3 -m venv venv
+source venv/bin/activate
+```
+
 ## Request Script (Python)
 ```
 import requests
