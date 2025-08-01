@@ -49,10 +49,9 @@ pip install SpeechRecognition
 pip install PyAudio
 ```
 
-Google akzeptiert Audio nur in bestimmten Formaten (z. B. FLAC oder WAV)
-Die speech_recognition-Bibliothek wandelt dein aufgenommenes Audio automatisch ins FLAC-Format um
-Dafür wird das externe Tool flac verwendet (nicht in Python enthalten)
-Ist es nicht vorhanden, bekommst du genau den Fehler, den du jetzt siehst
+Google only accepts audio in certain formats (e.g., FLAC or WAV). The speech_recognition library automatically 
+converts your recorded audio to the FLAC format. For this, it uses the external tool flac (not included with Python). 
+If it's not available, you'll get exactly the error you're seeing now.
 ```
 sudo apt update
 sudo apt install flac
