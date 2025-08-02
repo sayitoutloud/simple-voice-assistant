@@ -9,10 +9,10 @@ class LMStudioClient:
             "Authorization": f"Bearer {token}"
         }
 
-    def frage(self, nachricht: str, temperature=0.7) -> str:
+    def question(self, msg: str, temperature=0.7) -> str:
         daten = {
             "model": self.model,
-            "messages": [{"role": "user", "content": nachricht}],
+            "messages": [{"role": "user", "content": msg}],
             "temperature": temperature
         }
 
