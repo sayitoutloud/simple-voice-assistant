@@ -4,13 +4,13 @@ import tempfile
 
 class SpeechOutput:
     def __init__(self, lan="en"):
-        self.language = lan
+        self.lan = lan
         pygame.mixer.init()
 
     def speak(self, text):
         try:
             with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmpfile:
-                tts = gTTS(text=text, lan=self.language)
+                tts = gTTS(text=text, lang=self.lan)
                 tts.save(tmpfile.name)
 
                 pygame.mixer.music.load(tmpfile.name)
