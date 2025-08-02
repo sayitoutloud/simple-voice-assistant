@@ -28,7 +28,7 @@ class STT:
                     # ?? Send to LM Studio
                     answer = self.assistent.question(text)
                     self.tts.speak(answer)
-                    print("?? Answer of LM Studio:", antwort)
+                    print("?? Answer of LM Studio:", answer)
                     print("-" * 50)
 
                 except sr.UnknownValueError:
