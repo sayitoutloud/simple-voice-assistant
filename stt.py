@@ -14,6 +14,7 @@ class STT:
         with sr.Microphone() as quelle:
             print("??? Voice monitoring started. You can speak any time...")
             self.recognizer.adjust_for_ambient_noise(quelle)
+            self.recognizer.pause_threshold = 1.5
 
             while True:
                 try:
