@@ -1,7 +1,7 @@
 import requests
 
 class LMStudioClient:
-    def __init__(self, url="http://10.0.0.45/lmstudio-api/v1/chat/completions", model="llama3:8b", token="lm-studio"):
+    def __init__(self, url="http://YOUR-IP/lmstudio-api/v1/chat/completions", model="llama3:8b", token="lm-studio"):
         self.url = url
         self.model = model
         self.headers = {
