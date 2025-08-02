@@ -2,15 +2,15 @@ from gtts import gTTS
 import pygame
 import tempfile
 
-class SprachAusgabe:
-    def __init__(self, sprache="de"):
-        self.sprache = sprache
+class SpeechOutput:
+    def __init__(self, lan="en"):
+        self.language = lan
         pygame.mixer.init()
 
-    def sprechen(self, text):
+    def speak(self, text):
         try:
             with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmpfile:
-                tts = gTTS(text=text, lang=self.sprache)
+                tts = gTTS(text=text, lan=self.language)
                 tts.save(tmpfile.name)
 
                 pygame.mixer.music.load(tmpfile.name)
@@ -18,4 +18,4 @@ class SprachAusgabe:
                 while pygame.mixer.music.get_busy():
                     pygame.time.Clock().tick(10)
         except Exception as e:
-            print("? Fehler bei SprachAusgabe:", e)
+            print("? Error in speech output:", e)
